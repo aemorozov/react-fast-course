@@ -1,3 +1,9 @@
+# My first React App
+
+## A little app with some state and loading data from API
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
