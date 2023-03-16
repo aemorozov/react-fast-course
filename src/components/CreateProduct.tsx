@@ -16,7 +16,7 @@ const productData: IProduct = {
 }
 
 interface CreateModalProps {
-    onCreate: () => void
+    onCreate: (product: IProduct) => void
 }
 
 export function CreateProduct({ onCreate }: CreateModalProps) {
@@ -33,7 +33,7 @@ export function CreateProduct({ onCreate }: CreateModalProps) {
         }
         productData.title = value
         const response = await axios.post<IProduct>('https://fakestoreapi.com/products', productData)
-        onCreate()
+        onCreate(response.data)
     }
 
     const changeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -6,6 +6,10 @@ export function useProducts() {
     const [products, setProducts] = useState<IProduct[]>([]) // кортеж, который отображает наши товары, если они загрузились
     const [loading, setLoading] = useState(true) // кортеж для отображения надписи loading... если товаров нет
     const [error, setError] = useState('') // кортеж для отображения ошибки
+
+    function addProduct(product: IProduct) {
+      setProducts(prev => [...prev, product])
+    }
   
     async function fetchProducts() { // функция для загрузки товаров с сервера
       try { // пробуем загрузить данные
@@ -24,5 +28,5 @@ export function useProducts() {
       fetchProducts() // вызываем функцию, в которой происходит загрузка
     }, [])
 
-    return { products, loading, error }
+    return { products, loading, error, addProduct }
 }
