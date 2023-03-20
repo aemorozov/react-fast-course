@@ -8,7 +8,6 @@ import { useContext } from 'react'
 import { IProduct } from './models';
 import { ModalContext } from './context/ModalContext';
 
-
 function App() {
 
   const { products, loading, error, addProduct } = useProducts()
